@@ -6,9 +6,9 @@ This repository contains the static portfolio website for Jonathon A. Fernelius.
 
 - `index.html` contains the home page and featured project summaries.
 - `pages/about.html` contains personal background, education, experience, and the photo carousel.
-- `pages/projects.html` contains the full project list.
-- `styles/style.css` contains shared styles, page layouts, responsive rules, and carousel presentation.
-- `scripts/main.js` contains shared navigation and carousel interactions.
+- `pages/projects.html` contains the searchable, filterable project card grid.
+- `styles/style.css` contains shared styles, page layouts, project cards, and responsive rules.
+- `scripts/main.js` contains shared navigation, project filtering, and photo carousel interactions.
 - `images/` contains the portfolio logo, portrait, and project imagery.
 
 ## Preview locally

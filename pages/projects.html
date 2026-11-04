@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#080d18">
-    <meta name="description" content="Selected information systems projects by Your Name. — EDIT">
-    <title>Projects | Your Name</title>
+    <meta name="description" content="Selected projects by Jonathon A. Fernelius, including Coursewise, a student task management app.">
+    <title>Projects | Jonathon A. Fernelius</title>
     <link rel="stylesheet" href="../styles/style.css">
-    <script src="../scripts/main.js" defer>
-    </script>
+    <script src="../scripts/main.js" defer></script>
     <link rel="icon" href="../images/jaf-logo.png">
   </head>
   <body>
@@ -38,95 +37,195 @@
       </div>
     </header>
     <main id="main">
-      <!-- Page title and summary introduce the selected work. -->
+      <!-- Introduce the project collection with the same concise tone as the home page. -->
       <section class="page-hero">
         <div class="container">
           <p class="eyebrow">
             PROJECTS / SELECTED WORK
           </p>
           <h1>
-            Work that turns<br>ideas into <span class="gradient-text">systems.</span>
+            Projects with<br><span class="gradient-text">purpose.</span>
           </h1>
           <p>
-            <!-- EDIT: Explain the kinds of projects you want recruiters to notice. -->
-            A selection of class, team, and personal projects. Each one taught me something about building useful technology and working through real constraints.
+            A selection of things I’ve built and learned from. Open a project to see the problem, the approach, and the details behind it.
           </p>
         </div>
       </section>
-      <!-- Each project card summarizes its problem, contribution, and tools. -->
+
+      <!-- Search and category filters help visitors scan the project collection. -->
       <section class="page-content container">
-        <div class="project-list">
-          <!-- EDIT: Duplicate this project-detail block to add projects. Include the problem, your contribution, outcome, technologies, and working demo/repository links. -->
-          <article class="project-detail">
-            <div>
-              <span class="project-number">PROJECT / 01</span>
-              <p class="label">
-                WEB APPLICATION • TEAM PROJECT
-              </p>
+        <div class="project-toolbar">
+          <div class="project-filters" role="group" aria-label="Filter projects by type">
+            <button
+              class="project-filter is-active"
+              type="button"
+              data-project-filter="all"
+              aria-pressed="true"
+            >All</button>
+            <button
+              class="project-filter"
+              type="button"
+              data-project-filter="websites"
+              aria-pressed="false"
+            >Websites</button>
+            <button
+              class="project-filter"
+              type="button"
+              data-project-filter="code"
+              aria-pressed="false"
+            >Code</button>
+            <button
+              class="project-filter"
+              type="button"
+              data-project-filter="automations"
+              aria-pressed="false"
+            >Automations</button>
+          </div>
+          <label class="project-search-wrap">
+            <span class="sr-only">Search projects by name, summary, or tag</span>
+            <input
+              class="project-search"
+              type="search"
+              data-project-search
+              placeholder="Search projects…"
+            >
+            <span class="project-search-icon" aria-hidden="true">⌕</span>
+          </label>
+        </div>
+
+        <p class="project-results" data-project-results aria-live="polite">Showing all projects</p>
+
+        <div class="portfolio-project-grid" data-project-grid>
+          <!-- Copy a card to add a project, then edit its category, image, summary, tags, and links. -->
+          <article
+            class="portfolio-project-card"
+            data-project-card
+            data-category="websites"
+            data-search="Coursewise student task manager web application team Canvas assignments HTML CSS JavaScript Supabase"
+          >
+            <div class="project-card-image coursewise-image">
+              <img
+                src="../images/Coursewise-picture.png"
+                alt="Coursewise student task manager interface"
+              >
+              <span class="project-card-index">01 / FEATURED</span>
             </div>
-            <div>
-              <h2>
-                [Canvas Assignment Hub]
-              </h2>
-              <p>
-                <!-- EDIT: Describe the user problem, your role, and the result. -->
-                Students using multiple learning platforms can miss tasks when deadlines are spread across separate calendars. Our team designed a central hub that brings courses and assignment deadlines together in one view. I contributed to [your specific responsibility], collaborating on requirements, interface, and data integration.
+            <div class="portfolio-project-info">
+              <p class="project-card-category">WEBSITE / TEAM PROJECT</p>
+              <h2>Coursewise</h2>
+              <p class="project-card-summary">
+                A student task manager that brings assignments and deadlines together, with a streamlined Canvas import to help students get organized quickly. Created as a team for the Project Management and Systems Design course at BYU.
               </p>
-              <div class="tag-list">
-                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Supabase</span><span>GitHub Pages</span>
+              <div class="project-card-tags" aria-label="Coursewise technologies">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Supabase</span>
               </div>
-              <p>
-                <a class="text-link" href="[ADD LIVE DEMO URL]">Live demo ↗</a> &nbsp; <a class="text-link" href="[ADD REPOSITORY URL]">Source code ↗</a>
-              </p>
+              <!-- Replace these labels with links when the project URLs are ready. -->
+              <div class="project-card-links" aria-label="Coursewise links">
+                <a href="https://jonathonfernelius.github.io/IS401-Todo-List/index.html" target="_blank">Website <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/jonathonfernelius/IS401-Todo-List" target="_blank">Repository <span aria-hidden="true">↗</span></a>
+                <a href="https://youtu.be/PurlXVpGRdY" target="_blank">Demo Video <span aria-hidden="true">↗</span></a>
+              </div>
             </div>
           </article>
-          <article class="project-detail">
-            <div>
-              <span class="project-number">PROJECT / 02</span>
-              <p class="label">
-                DATABASE • COURSEWORK
-              </p>
+
+          <!-- These three starter cards demonstrate the layout for future projects. -->
+          <article
+            class="portfolio-project-card project-card-placeholder"
+            data-project-card
+            data-category="websites"
+            data-search="website project title summary tags"
+          >
+            <div
+              class="project-card-image placeholder-image"
+              role="img"
+              aria-label="Placeholder for a project image"
+            >
+              <span class="placeholder-mark" aria-hidden="true">02</span>
+              <span class="placeholder-caption">ADD PROJECT IMAGE</span>
             </div>
-            <div>
-              <h2>
-                [Relational Database Project]
-              </h2>
-              <p>
-                <!-- EDIT: State what data the database organizes and an interesting query or design decision. -->
-                Designed a relational schema for [business or scenario]. Created an ERD, defined tables and relationships, and wrote SQL queries to answer questions about the data.
+            <div class="portfolio-project-info">
+              <p class="project-card-category">WEBSITE</p>
+              <h2>Project title</h2>
+              <p class="project-card-summary">
+                Add a short description of what this project does and who it helps.
               </p>
-              <div class="tag-list">
-                <span>SQL</span><span>PostgreSQL</span><span>ERD</span><span>Data Modeling</span>
+              <div class="project-card-tags">
+                <span>Tag</span>
+                <span>Technology</span>
               </div>
-              <p>
-                <a class="text-link" href="[ADD PROJECT LINK]">View project ↗</a>
-              </p>
+              <div class="project-card-links">
+                <span>Website ↗</span>
+                <span>Repository ↗</span>
+              </div>
             </div>
           </article>
-          <article class="project-detail">
-            <div>
-              <span class="project-number">PROJECT / 03</span>
-              <p class="label">
-                WEB DEVELOPMENT • PERSONAL
-              </p>
+
+          <article
+            class="portfolio-project-card project-card-placeholder"
+            data-project-card
+            data-category="code"
+            data-search="code project title summary tags"
+          >
+            <div
+              class="project-card-image placeholder-image"
+              role="img"
+              aria-label="Placeholder for a project image"
+            >
+              <span class="placeholder-mark" aria-hidden="true">03</span>
+              <span class="placeholder-caption">ADD PROJECT IMAGE</span>
             </div>
-            <div>
-              <h2>
-                [Another project you’re proud of]
-              </h2>
-              <p>
-                <!-- EDIT: Add a personal project, process improvement, case study, or class assignment. -->
-                [What was the goal? What did you make or analyze? What was your contribution and what did you learn?]
+            <div class="portfolio-project-info">
+              <p class="project-card-category">CODE PROJECT</p>
+              <h2>Project title</h2>
+              <p class="project-card-summary">
+                Summarize the problem, your approach, and the result in a sentence or two.
               </p>
-              <div class="tag-list">
-                <span>[TOOL]</span><span>[SKILL]</span><span>[TECHNOLOGY]</span>
+              <div class="project-card-tags">
+                <span>Language</span>
+                <span>Tool</span>
               </div>
-              <p>
-                <a class="text-link" href="[ADD PROJECT LINK]">View project ↗</a>
+              <div class="project-card-links">
+                <span>Repository ↗</span>
+                <span>Demo video ↗</span>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="portfolio-project-card project-card-placeholder"
+            data-project-card
+            data-category="automations"
+            data-search="automation project title summary tags"
+          >
+            <div
+              class="project-card-image placeholder-image"
+              role="img"
+              aria-label="Placeholder for a project image"
+            >
+              <span class="placeholder-mark" aria-hidden="true">04</span>
+              <span class="placeholder-caption">ADD PROJECT IMAGE</span>
+            </div>
+            <div class="portfolio-project-info">
+              <p class="project-card-category">AUTOMATION</p>
+              <h2>Project title</h2>
+              <p class="project-card-summary">
+                Describe a workflow you improved, the tools involved, and what changed.
               </p>
+              <div class="project-card-tags">
+                <span>Process</span>
+                <span>Technology</span>
+              </div>
+              <div class="project-card-links">
+                <span>Repository ↗</span>
+                <span>Demo video ↗</span>
+              </div>
             </div>
           </article>
         </div>
+        <p class="project-empty-state" data-project-empty hidden>No matching projects. Try a different search or category.</p>
       </section>
     </main>
     <!-- Footer -->

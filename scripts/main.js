@@ -17,6 +17,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Project browser: combine category filters with a search across card text and tags.
+  const projectGrid = document.querySelector('[data-project-grid]');
+  if (projectGrid) {
+    const cards = [...projectGrid.querySelectorAll('[data-project-card]')];
+    const filterButtons = [...document.querySelectorAll('[data-project-filter]')];
+    const searchInput = document.querySelector('[data-project-search]');
+    const resultMessage = document.querySelector('[data-project-results]');
+    const emptyState = document.querySelector('[data-project-empty]');
+    let activeCategory = 'all';
+
+    // Hide cards that fail either the selected category or the search query.
+    const updateVisibleCards = () => {
+      const query = searchInput?.value.trim().toLowerCase() ?? '';
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const matchesCategory = activeCategory === 'all'
+          || card.dataset.category === activeCategory;
+        const searchableText = `${card.dataset.search ?? ''} ${card.textContent}`.toLowerCase();
+        const matchesSearch = searchableText.includes(query);
+        const isVisible = matchesCategory && matchesSearch;
+
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      if (resultMessage) {
+        resultMessage.textContent = `Showing ${visibleCount} of ${cards.length} projects`;
+      }
+      if (emptyState) emptyState.hidden = visibleCount > 0;
+    };
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        activeCategory = button.dataset.projectFilter ?? 'all';
+
+        filterButtons.forEach((filterButton) => {
+          const isActive = filterButton === button;
+          filterButton.classList.toggle('is-active', isActive);
+          filterButton.setAttribute('aria-pressed', String(isActive));
+        });
+
+        updateVisibleCards();
+      });
+    });
+
+    searchInput?.addEventListener('input', updateVisibleCards);
+    updateVisibleCards();
+  }
+
   // About page carousel: show a centered photo with partial previews on either side.
   document.querySelectorAll('[data-photo-carousel]').forEach((carousel) => {
     const viewport = carousel.querySelector('[data-photo-track]');
@@ -148,8 +198,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => positionRail(false));
   });
 
-  // Keep the footer year current automatically.
-  document.querySelectorAll('[data-year]').forEach((year) => {
-    year.textContent = new Date().getFullYear();
-  });
 });
