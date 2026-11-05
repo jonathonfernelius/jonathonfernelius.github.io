@@ -77,9 +77,9 @@
             <button
               class="project-filter"
               type="button"
-              data-project-filter="automations"
+              data-project-filter="games"
               aria-pressed="false"
-            >Automations</button>
+            >Games</button>
           </div>
           <label class="project-search-wrap">
             <span class="sr-only">Search projects by name, summary, or tag</span>
@@ -106,23 +106,23 @@
             <div class="project-card-image coursewise-image">
               <img
                 src="../images/Coursewise-picture.png"
-                alt="Coursewise student task manager interface"
+                alt="Coursewise logo"
               >
               <span class="project-card-index">01 / FEATURED</span>
             </div>
             <div class="portfolio-project-info">
-              <p class="project-card-category">WEBSITE / TEAM PROJECT</p>
+              <p class="project-card-category">WEBSITE / SCHOOL PROJECT</p>
               <h2>Coursewise</h2>
               <p class="project-card-summary">
                 A student task manager that brings assignments and deadlines together, with a streamlined Canvas import to help students get organized quickly. Created as a team for the Project Management and Systems Design course at BYU.
               </p>
               <div class="project-card-tags" aria-label="Coursewise technologies">
-                <span>HTML</span>
-                <span>CSS</span>
+                <span>HTML/CSS</span>
                 <span>JavaScript</span>
                 <span>Supabase</span>
+                <span>AI</span>
               </div>
-              <!-- Replace these labels with links when the project URLs are ready. -->
+              <!-- Links to the website, repository, and demo video -->
               <div class="project-card-links" aria-label="Coursewise links">
                 <a href="https://jonathonfernelius.github.io/IS401-Todo-List/index.html" target="_blank">Website <span aria-hidden="true">↗</span></a>
                 <a href="https://github.com/jonathonfernelius/IS401-Todo-List" target="_blank">Repository <span aria-hidden="true">↗</span></a>
@@ -143,8 +143,7 @@
               role="img"
               aria-label="Placeholder for a project image"
             >
-              <span class="placeholder-mark" aria-hidden="true">02</span>
-              <span class="placeholder-caption">ADD PROJECT IMAGE</span>
+              <span class="project-card-index" aria-hidden="true">02</span>
             </div>
             <div class="portfolio-project-info">
               <p class="project-card-category">WEBSITE</p>
@@ -174,8 +173,7 @@
               role="img"
               aria-label="Placeholder for a project image"
             >
-              <span class="placeholder-mark" aria-hidden="true">03</span>
-              <span class="placeholder-caption">ADD PROJECT IMAGE</span>
+              <span class="project-card-index" aria-hidden="true">03</span>
             </div>
             <div class="portfolio-project-info">
               <p class="project-card-category">CODE PROJECT</p>
@@ -195,32 +193,33 @@
           </article>
 
           <article
-            class="portfolio-project-card project-card-placeholder"
+            class="portfolio-project-card"
             data-project-card
-            data-category="automations"
-            data-search="automation project title summary tags"
+            data-category="games"
+            data-search="game project title summary tags"
           >
-            <div
-              class="project-card-image placeholder-image"
-              role="img"
-              aria-label="Placeholder for a project image"
-            >
-              <span class="placeholder-mark" aria-hidden="true">04</span>
-              <span class="placeholder-caption">ADD PROJECT IMAGE</span>
+            <div class="project-card-image scriptle-art">
+              <img
+                src="../images/Scriptle-picture.png"
+                alt="Scriptle student task manager interface"
+              >
+              <span class="project-card-index" aria-hidden="true">04</span>
             </div>
             <div class="portfolio-project-info">
-              <p class="project-card-category">AUTOMATION</p>
-              <h2>Project title</h2>
+              <p class="project-card-category">GAME / PERSONAL PROJECT</p>
+              <h2>Scriptle</h2>
               <p class="project-card-summary">
                 Describe a workflow you improved, the tools involved, and what changed.
               </p>
               <div class="project-card-tags">
-                <span>Process</span>
-                <span>Technology</span>
+                <span>Python</span>
+                <span>PyQt6</span>
+                <span>JSON</span>
               </div>
-              <div class="project-card-links">
-                <span>Repository ↗</span>
-                <span>Demo video ↗</span>
+              <!-- Links to the website, repository, and demo video -->
+              <div class="project-card-links" aria-label="Coursewise links">
+                <a href="https://github.com/jonathonfernelius/Scripture-Guessing-Game" target="_blank">Repository <span aria-hidden="true">↗</span></a>
+                <a href="https://youtu.be/" target="_blank">Demo Video <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </article>
@@ -228,6 +227,9 @@
         <p class="project-empty-state" data-project-empty hidden>No matching projects. Try a different search or category.</p>
       </section>
     </main>
+
+
+
     <!-- Footer -->
     <footer class="site-footer">
       <div class="container footer-inner">

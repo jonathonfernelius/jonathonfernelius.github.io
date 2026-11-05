@@ -112,13 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const activeSlide = rail.children[index];
       if (!activeSlide) return;
 
-      rail.style.transition = animate ? '' : 'none';
       const offset = activeSlide.offsetLeft - (viewport.clientWidth - activeSlide.clientWidth) / 2;
-      rail.style.transform = 'translate3d(' + -offset + 'px, 0, 0)';
+      if (!animate) rail.style.transition = 'none';
+      rail.style.transform = `translate3d(${-offset}px, 0, 0)`;
 
-      if (!animate) {
-        requestAnimationFrame(() => { rail.style.transition = ''; });
-      }
+      if (animate) return;
+
+      // Apply clone-to-original repositioning before restoring the CSS transition.
+      // This prevents a visible reverse slide at the loop boundary on touch screens.
+      rail.getBoundingClientRect();
+      rail.style.removeProperty('transition');
     };
 
     // Keep the active progress segment in sync with the selected photo.

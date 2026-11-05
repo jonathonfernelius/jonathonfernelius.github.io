@@ -27,10 +27,13 @@ EDIT: Change the design tokens below to quickly customize the colors and spacing
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
 }
 
 body {
   margin: 0;
+  overflow-x: clip;
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
@@ -1558,6 +1561,7 @@ button {
   border-radius: 12px;
   background: var(--bg);
   box-shadow: 0 18px 50px rgba(0, 0, 0, .24);
+  overscroll-behavior-x: contain;
   touch-action: pan-y;
   cursor: grab;
 }
@@ -1879,7 +1883,9 @@ button {
   }
 
   .about-photo-carousel {
-    margin: 0 -8px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
 
   .about-photo-slide {
