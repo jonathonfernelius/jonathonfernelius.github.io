@@ -1764,8 +1764,12 @@ button {
 }
 
 .about-experience-card .experience-card-subtitle {
-  margin: 0 0 12px;
   color: #d0d9e5;
+}
+
+.experience-card-subtitle {
+  font-weight: bold;
+  font-size: 16;
 }
 
 .about-experience-card .experience-card-note {
