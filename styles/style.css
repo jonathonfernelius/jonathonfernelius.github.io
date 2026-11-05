@@ -1754,7 +1754,7 @@ button {
 
 .about-experience-card h3 {
   margin: 0 0 6px;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: -.025em;
 }
 
@@ -1769,7 +1769,7 @@ button {
 
 .experience-card-subtitle {
   font-weight: bold;
-  font-size: 16;
+  font-size: 14px;
 }
 
 .about-experience-card .experience-card-note {
