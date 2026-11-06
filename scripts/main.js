@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const originalSlides = [...rail.querySelectorAll('.about-photo-slide')];
     if (originalSlides.length < 2) return;
 
-    // Hidden end copies let users wrap from the first photo to the last and back.
-    const cloneCount = 1;
+    // Copy the adjacent slides too so the side previews stay identical at a loop boundary.
+    const cloneCount = Math.min(2, originalSlides.length);
     const makeClone = (slide) => {
       const clone = slide.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
@@ -89,8 +89,16 @@ document.addEventListener('DOMContentLoaded', () => {
       clone.querySelectorAll('img').forEach((image) => { image.alt = ''; });
       return clone;
     };
-    rail.prepend(makeClone(originalSlides.at(-1)));
-    rail.append(makeClone(originalSlides[0]));
+    const leadingClones = originalSlides
+      .slice(-cloneCount)
+      .reverse()
+      .map(makeClone);
+    const trailingClones = originalSlides
+      .slice(0, cloneCount)
+      .map(makeClone);
+
+    rail.prepend(...leadingClones);
+    rail.append(...trailingClones);
 
     // Create a direct-selection button for each original photo.
     const pageButtons = originalSlides.map((_, slideIndex) => {
